@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokédex & Kaarten</title>
+  <meta name="description" content="Bekijk alle Pokémon en hun Pokémon-kaarten." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23fff' stroke='%23222' stroke-width='8'/><path d='M4 50a46 46 0 0 1 92 0z' fill='%23e3350d' stroke='%23222' stroke-width='8'/><circle cx='50' cy='50' r='13' fill='%23fff' stroke='%23222' stroke-width='8'/></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="ball" aria-hidden="true"></span>
+      <span>Pokédex <small>& kaarten</small></span>
+    </a>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Zoek op naam of nummer…" autocomplete="off" aria-label="Zoeken" />
+      <select id="gen" aria-label="Generatie"><option value="">Alle generaties</option></select>
+      <select id="type" aria-label="Type"><option value="">Alle types</option></select>
+    </div>
+  </header>
+
+  <main>
+    <p id="status" class="status">Pokémon laden…</p>
+    <ul id="grid" class="grid" aria-live="polite"></ul>
+  </main>
+
+  <dialog id="detail" class="detail" aria-labelledby="d-name">
+    <button class="close" data-close aria-label="Sluiten">✕</button>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <dialog id="lightbox" class="lightbox">
+    <button class="close" data-close aria-label="Sluiten">✕</button>
+    <div id="lightbox-body"></div>
+  </dialog>
+
+  <footer>
+    Data: <a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a> &amp;
+    <a href="https://tcgdex.dev" target="_blank" rel="noopener">TCGdex</a>.
+    Pokémon © Nintendo, Game Freak, The Pokémon Company. Fanproject, niet officieel.
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
