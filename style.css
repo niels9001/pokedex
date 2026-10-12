@@ -115,6 +115,46 @@ dialog::backdrop { background: rgb(0 0 0 / .6); backdrop-filter: blur(3px); }
 .tcg img { width: 100%; aspect-ratio: 245 / 342; border-radius: 8px; display: block; background: rgb(127 127 127 / .15); }
 .more { margin-top: 14px; font: inherit; padding: 8px 18px; border-radius: 999px; border: 0; background: var(--accent); color: #fff; cursor: pointer; }
 
+/* header collection link */
+.coll-link {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+  background: rgb(0 0 0 / .18); text-decoration: none; font-weight: 600; white-space: nowrap;
+}
+.coll-link b { background: #fff; color: var(--accent); border-radius: 999px; padding: 0 8px; font-size: .85rem; }
+
+/* owned badge on grid tiles */
+.mon { position: relative; }
+.badge {
+  position: absolute; top: 8px; right: 8px; font-size: .72rem; font-weight: 700;
+  background: #1f9d55; color: #fff; border-radius: 999px; padding: 2px 7px;
+}
+
+/* card tiles with price + owned toggle */
+.cards-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.cards-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: .9rem; }
+.cards-tools select { font: inherit; padding: 6px 10px; border-radius: 999px; border: 1px solid rgb(127 127 127 / .35); background: var(--card); color: var(--text); }
+.cards-section .status { text-align: left; margin: 0 0 12px; }
+.tcg-item { display: flex; flex-direction: column; gap: 6px; }
+.tcg-item .tcg { outline: 3px solid transparent; outline-offset: 2px; }
+.tcg-item.owned .tcg { outline-color: #1f9d55; }
+.tcg-meta { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: .85rem; }
+.price { font-weight: 700; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); font-weight: 400; }
+.own { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; user-select: none; color: var(--muted); }
+.own input { accent-color: #1f9d55; width: 16px; height: 16px; margin: 0; cursor: pointer; }
+.tcg-item.owned .own { color: #1f9d55; font-weight: 700; }
+
+/* collection view */
+.collection-head { padding: 24px 24px 0; }
+.collection-head h2 { margin: 0 0 6px; font-size: 1.8rem; }
+#coll-summary { font-size: 1.1rem; font-weight: 600; margin: 0 0 12px; }
+.coll-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.coll-actions .more { margin: 0; }
+.hint { color: var(--muted); font-size: .85rem; }
+.coll-item { display: flex; flex-direction: column; gap: 6px; }
+.coll-mon { font-size: .8rem; color: var(--muted); text-decoration: none; text-transform: capitalize; }
+.coll-mon:hover { text-decoration: underline; }
+
 .lightbox { background: transparent; overflow: visible; }
 .lightbox img { max-height: 90vh; max-width: 92vw; border-radius: 16px; display: block; }
 
